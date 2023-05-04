@@ -1,0 +1,56 @@
+.span-valor,
+.span-nome-pagador,
+.span-referencia,
+.span-data,
+.span-nome-emissor,
+.span-cidade-emissor,
+.span-cpf-emissor,
+.span-cnpj-emissor,
+.span-estado-emissor {
+    color: #f00;
+    font-size: 13px;
+    margin-left: 5px;
+    display: none;
+}
+
+
+.recibo--cpf-cnpj-emissor, .recibo--contato-emissor {
+    font-size: .9rem;
+}
+
+
+.area-recibo, .botoes-recibo, #btn-gerar-recibo-novamente {
+    display: none;
+  }
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .area-recibo,
+    .area-recibo * {
+        visibility: visible;
+    }
+
+    .area-recibo {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 25px;
+    }
+
+    .area-form {
+        display: none;
+    }
+
+    .botoes-recibo * {
+        visibility: hidden;
+    }
+
+}

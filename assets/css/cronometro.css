@@ -1,0 +1,8 @@
+.timer {
+    font-family: consolas, Arial, Helvetica, sans-serif;
+}
+
+.pause-btn, .resume-btn {
+    display: none;
+}
+

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78XKB12PQG');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de recibos online grátis - Web Tools BR</title>
+    <meta name="description"
+        content="Gerador de recibos online e gratuito - Ferramenta simples e prática para gerar seu recibo online - Web Tools BR" />
+    <link rel=canonical href=https://webtoolsbr.com.br/pages/gerador-de-recibos-online.html />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/cookiealert.css">
+    <link rel="stylesheet" href="/assets/css/recibo-online.css">
+    <link rel="shortcut icon" href="/assets/images/icone.png">
+
+    <script src="/assets/js/recibo-online.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+        integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-lg">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo.svg" alt="Logo" width="30" height="30"
+                        class="d-inline-block align-text-top">
+                    Web Tools BR
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Calculadoras
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área
+                                        de terreno com 3 lados diferentes</a></li>
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área
+                                        de terreno com 4 lados diferentes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geradores
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/gerador-de-recibos-online.html">Gerador de
+                                        recibos online</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geral
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/sortear-times.html">Sortear times</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-lg mt-4">
+        <div class="row">
+            <section class="col-lg border py-5 mb-4 rounded-2">
+                <article>
+                    <div class="area-form" id="form">
+                        <h1>Gerador de recibos online</h1>
+
+                        <div class="mb-3">
+                            <fieldset class="gerais reset">
+                                <legend class="reset">
+                                    <p class="h5">Informações gerais</p>
+                                </legend>
+                                <div class="num-recibo">
+                                    <label class="form-label" for="num-recibo">Nº do recibo:</label>
+                                    <input type="text" class="form-control form-control-sm" id="num-recibo">
+                                </div>
+                                <label class="form-label" for="valor-recibo"><span
+                                        style="color: #f00; font-weight: bold;">* </span>Valor do recibo:</label>
+                                <div class="valor-recibo input-group  input-group-sm ">
+                                    <span class="input-group-text">R$</span>
+                                    <input type="number" placeholder="Exemplo R$ 50,40" step="0.01"
+                                        class="form-control form-control-sm" id="valor-recibo"
+                                        oninput="validarValorRecibo()">
+                                </div>
+                                <span class="span-valor">Digite o valor do recibo</span>
+                            </fieldset>
+
+                            <fieldset class="pagador reset">
+                                <legend class="reset">
+                                    <p class="h5">Informações do pagador</p>
+                                </legend>
+                                <div class="nome-pagador">
+                                    <label class="form-label" for="nome-pagador"><span
+                                            style="color: #f00; font-weight: bold;">* </span>Recebi(emos) de:</label>
+                                    <input type="text" class="form-control form-control-sm" id="nome-pagador"
+                                        oninput="validarNomePagador()">
+                                </div>
+                                <span class="span-nome-pagador">Digite o nome de quem pagou (no mínimo 3
+                                    caracteres)</span>
+                                <div class="cpf-cnpj-pagador d-flex flex-row">
+                                    <div>
+                                        <input type="radio" value="cpf" name="cpf-cnpj-pagador" id="cpf-pagador"
+                                            checked>
+                                        <label for="cpf-pagador">CPF</label>
+                                    </div>
+                                    <div class="ms-3">
+                                        <input type="radio" value="cnpj" name="cpf-cnpj-pagador" id="cnpj-pagador">
+                                        <label for="cnpj-pagador">CNPJ</label>
+                                    </div>
+
+                                </div>
+                                <input type="text" class="form-control form-control-sm" id="cpf-cnpj-pagador"
+                                    maxlength="14" onkeyup="handleCpf(event)">
+                                <div class="endereco-pagador">
+                                    <label class="form-label" for="endereco-pagador"> Endereço:</label>
+                                    <input type="text" class="form-control form-control-sm" id="endereco-pagador">
+                                </div>
+                                <div class="cidade-pagador">
+                                    <label class="form-label" for="cidade-pagador"> Cidade:</label>
+                                    <input type="text" class="form-control form-control-sm" id="cidade-pagador">
+                                </div>
+                                <div class="estado-pagador">
+                                    <label class="form-label" for="estado-pagador">Estado:</label>
+                                    <select class="form-select" aria-label="Default select example" id="estado-pagador">
+                                        <option selected="" value="">Selecione o Estado (UF)</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espirito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="info-recibo reset">
+                                <legend class="reset">
+                                    <p class="h5">Informações do recibo</p>
+                                </legend>
+                                <div class="referencia-recibo">
+                                    <label class="form-label" for="referencia-recibo"><span
+                                            style="color: #f00; font-weight: bold;">* </span>Referente à:</label>
+                                    <input type="text" class="form-control form-control-sm" id="referencia-recibo"
+                                        oninput="validarReferencia()">
+                                </div>
+                                <span class="span-referencia">Digite a que é referente o recibo (no mínimo 3
+                                    caracteres)</span>
+
+                                <div class="data-recibo">
+                                    <label class="form-label" for="data-recibo"><span
+                                            style="color: #f00; font-weight: bold;">* </span>Data:</label>
+                                    <input type="date" class="form-control form-control-sm" id="data-recibo"
+                                        oninput="validarDataRecibo()">
+                                </div>
+                                <span class="span-data">Digite a uma data para o recibo</span>
+                            </fieldset>
+
+                            <fieldset class="emissor reset">
+                                <legend class="reset">
+                                    <p class="h5">Informações do emissor</p>
+                                </legend>
+                                <div class="nome-emissor">
+                                    <label class="form-label" for="nome-emissor"><span
+                                            style="color: #f00; font-weight: bold;">* </span>Nome do emissor:</label>
+                                    <input type="text" class="form-control form-control-sm" id="nome-emissor"
+                                        oninput="validarNomeEmissor()">
+                                </div>
+                                <span class="span-nome-emissor">Digite o nome do emissor do recibo (no mínimo 3
+                                    caracteres)</span>
+                                <div class="cpf-cnpj-emissor d-flex flex-row">
+                                    <div><span style="color: #f00; font-weight: bold;">* </span>
+                                        <input type="radio" value="cpf" name="cpf-cnpj-emissor" id="cpf-emissor"
+                                            checked>
+                                        <label for="cpf-emissor">CPF</label>
+                                    </div>
+                                    <div class="ms-3">
+                                        <input type="radio" value="cnpj" name="cpf-cnpj-emissor" id="cnpj-emissor">
+                                        <label for="cnpj-emissor">CNPJ</label>
+                                    </div>
+
+                                </div>
+                                <input type="text" class="form-control form-control-sm" id="cpf-cnpj-emissor"
+                                    maxlength="14" oninput="validarCpfEmissor()" onkeyup="handleCpf(event)">
+                                <span class="span-cpf-emissor">Digite o CPF do emissor do recibo (11 números).</span>
+                                <span class="span-cnpj-emissor">Digite o CNPJ do emissor do recibo (14 números)</span>
+                                <div class="cidade-emissor">
+                                    <label class="form-label" for="cidade-emissor">
+                                        <span style="color: #f00; font-weight: bold;">* </span>Cidade:</label>
+                                    <input type="text" class="form-control form-control-sm" id="cidade-emissor"
+                                        oninput="validarCidadeEmissor()">
+                                </div>
+                                <span class="span-cidade-emissor">Digite cidade do emissor do recibo</span>
+                                <div class="estado-emissor">
+                                    <label class="form-label" for="estado-emissor"><span
+                                            style="color: #f00; font-weight: bold;">* </span>Estado:</label>
+                                    <select class="form-select" aria-label="Default select example" id="estado-emissor"
+                                        oninput="validarEstadoEmissor()">
+                                        <option selected="" value="">Selecione o Estado (UF)</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espirito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                                <span class="span-estado-emissor">Selecione o Estado do emissor do recibo</span>
+                                <div class="contato">
+                                    <label class="form-label" for="contato">
+                                        Contato:</label>
+                                    <input type="tel" class="form-control form-control-sm" id="contato" maxlength="15"
+                                        onkeyup="handlePhone(event)">
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="pagamento reset">
+                                <legend class="reset">
+                                    <p class="h5">Formas de Pagamentos</p>
+                                </legend>
+                                <div class="forma-pagamento">
+                                    <div>
+                                        <input type="radio" value="dinheiro" name="forma-pagamento" id="dinheiro"
+                                            checked>
+                                        <label for="dinheiro">Dinheiro</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" value="cartao" name="forma-pagamento" id="cartao">
+                                        <label for="cartao">Cartão</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" value="pix" name="forma-pagamento" id="pix">
+                                        <label for="pix">Pix</label>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                            <fieldset class="vias reset">
+                                <legend class="reset">
+                                    <p class="h5"> Duas vias?</p>
+                                </legend>
+                                <div class="duas-vias">
+                                    <input type="checkbox" class="form-check-input" value="duas-vias" id="duas-vias">
+                                    <label for="duas-vias" class="form-check-label">Sim</label>
+                                </div>
+
+                            </fieldset>
+
+                            <div class="gerar-recibo mt-4 d-grid">
+                                <a class="btn btn-dark mb-2" id="btn-gerar-recibo" href="#">Gerar recibo</a>
+                            </div>
+
+                            <div class="gerar-recibo d-grid">
+                                <a class="btn btn-dark mb-2" href="#form" id="btn-limpar-recibo">Limpar</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="area-recibo mt-3">
+                        <div class="recibo-gerado border border-dark rounded p-3">
+                            <div class="recibo-header d-flex justify-content-evenly mb-3">
+                                <span class="num fw-bolder"><span class="recibo--num-recibo">---</span></span>
+                                <span class="valor fw-bolder">
+                                    <span class="recibo--valor-recibo"></span>
+                                </span>
+                            </div>
+                            <div class="recibo-body">
+                                <p style="text-align: justify;">Recebi(emos) de <span
+                                        class="recibo--nome-pagador text-uppercase fw-bolder"></span><span
+                                        class="recibo--cpf-cnpj-pagador">
+                                    </span><span class="recibo--endereco-pagador"></span><span
+                                        class="recibo--cidade-pagador"></span><span
+                                        class="recibo--estado-pagador"></span> <span
+                                        class="recibo--valor-recibo2"></span> (<span
+                                        class="recibo--valor-extenso"></span>) <span
+                                        class="recibo--forma-pagamento"></span><span
+                                        class="recibo--referencia-recibo"></span></p>
+                                <p class="text-end mt-5"><span class="recibo--cidade-emissor"></span> <span
+                                        class="recibo--data"></span></p>
+                                <p class="text-center mt-5"><span
+                                        class="recibo--assinatura">_____________________________________________________</span><br>
+                                    <span class="recibo--nome-emissor"></span><br>
+                                    <span class="recibo--cpf-cnpj-emissor"></span><br>
+                                    <span class="recibo--contato-emissor"></span>
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="segunda-via mt-5">
+
+                        </div>
+
+                    </div>
+                    <div class="botoes-recibo justify-content-evenly">
+                        <div class="imprimir-recibo mt-4 ">
+                            <input class="btn btn-dark mb-2" type="submit" value="Imprimir recibo" onclick="imprimir()">
+                        </div>
+                        <div class="baixar-recibo mt-4 ">
+                            <input class="btn btn-dark mb-2" type="submit" value="Baixar recibo" id="baixar-recibo">
+                        </div>
+                    </div>
+
+                </article>
+                <hr>
+                
+            </section>
+            <!-- INÍCIO SIDEBAR -->
+
+            <aside class="col-lg-3 border ms-2 rounded-2 mb-4 p-0 pb-2">
+                <ul class="list-group list-group-flush">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Calculadoras</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área de imóvel 3
+                            Lados diferentes</a>
+                        </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área de imóvel 4
+                            Lados diferentes</a>
+                        </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-metros-quadrados.html">Calular metros quadrados</a>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geradores</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/gerador-de-recibos-online.html">Gerador de
+                            recibos</a>
+                    </li>
+                </ul>
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geral</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/sortear-times.html">Sortear times</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/cronometro-online.html">Cronômetro online</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <!-- START Bootstrap-Cookie-Alert -->
+    <div class="alert text-center cookiealert" role="alert">
+        <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a
+            href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+
+        <button type="button" class="btn btn-primary btn-sm acceptcookies">
+            I agree
+        </button>
+    </div>
+    <!-- END Bootstrap-Cookie-Alert -->
+    <footer class="bg-dark pt-3 pb-1">
+        <div class="container-lg text-center text-light">
+            <p>Copyright © 2023 <a
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://webtoolsbr.com.br/">Web Tools BR</a> – Todos os direitos reservados.</p>
+        </div>
+        <div class="container-lg text-center text-light">
+            <p>
+                <a href="/pages/politica-de-privacidade.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Política
+                    de
+                    privacidade</a> -
+                <a href="/pages/termos-e-condicoes.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Termos e
+                    condições</a> -
+                <a href="/pages/contato.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contato</a>
+            </p>
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/cookiealert.js"></script>
+
+
+</body>
+
+</html>

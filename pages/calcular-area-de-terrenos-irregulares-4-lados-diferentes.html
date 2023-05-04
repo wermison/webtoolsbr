@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78XKB12PQG');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como calcular o tamanho de terrenos com 4 lados diferentes</title>
+    <meta name="description"
+        content="Calcule abaixo o tamanho de terrenos com formato irregular (4 lados diferentes). Aprenda como o cálculo é feito - Aprenda a calcular área de imóveis" />
+    <link rel=canonical
+        href=https://webtoolsbr.com.br/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="shortcut icon" href="/assets/images/icone.png">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-lg">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo.svg" alt="Logo" width="30" height="30"
+                        class="d-inline-block align-text-top">
+                    Web Tools BR
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Calculadoras
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área
+                                        de terreno com 3 lados diferentes</a></li>
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área
+                                        de terreno com 4 lados diferentes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geradores
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/gerador-de-recibos-online.html">Gerador de
+                                        recibos online</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geral
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/sortear-times.html">Sortear times</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-lg mt-4">
+        <div class="row">
+            <section class="col-lg border py-5 mb-4 rounded-2 ">
+                <article>
+                    <div class="row">
+                        <h1 class="fs-3 mb-4">
+                            Calcule abaixo o tamanho de terrenos com formato irregular (4 lados diferentes).
+                        </h1>
+                        <div class="col-lg-4 img-ferramenta d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/img-4-lados-dif.png" alt="Imagem calculo do imóvel">
+                        </div>
+
+                        <div class="col-lg">
+
+                            <div class="mb-3">
+                                <label class="form-label">Lado 1:</label>
+                                <input type="number" placeholder="Digite o valor em metros"
+                                    class="form-control form-control-sm lado1">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Lado 2:</label>
+                                <input type="number" placeholder="Digite o valor em metros"
+                                    class="form-control form-control-sm lado2">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Lado 3:</label>
+                                <input type="number" placeholder="Digite o valor em metros"
+                                    class="form-control form-control-sm lado3">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Lado 4:</label>
+                                <input type="number" placeholder="Digite o valor em metros"
+                                    class="form-control form-control-sm lado4">
+                            </div>
+
+                            <div id="calcular" class="d-grid">
+                                <button type="button" class="btn btn-dark mb-2" onclick="calc4Lados()">Calcular</button>
+                            </div>
+
+                            <div class="result">
+                                <p class="alert alert-light text-center">O valor da área aparecerá aqui</p>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-5">Como é feito o cálculo?</h3>
+
+                        <p>
+                            Basta somar a frente do terreno e fundos. Ex: Frente = 20,00 Fundos = 32,00 Somatória
+                            divide-se por (2) 52,00/2 = 26,00 Após obter esse resultado Soma-se os lados Ex: Lado
+                            direito = 41,00 Lado esquerdo = 53,00 Somatória divide-se por (2) = 94,00/2 = 47,00 Após
+                            obter esse resultado Multiplicar os dois totais Ex: 26,00 X 47,00 = 1.222,00 M2 ( área do
+                            terreno).
+                        </p>
+                        <h5>O que é um Trapézio Escaleno.</h5>
+                        <p>
+                            Um terreno com os 4 lados diferentes é uma forma geométrica chamada de trapézio
+                            escaleno.
+                            O trapézio é classificado como escaleno quando não possui nenhum de seus lados congruentes,
+                            ou seja, todos os lados têm medidas diferentes e, consequentemente, todos os ângulos
+                            internos têm medidas diferentes.
+                        </p>
+
+                        <hr>
+                    </div>
+                    <!-- <div class="row">
+                        <hr class="hr">
+                      
+                    </div> -->
+                </article>
+            </section>
+            <!-- INÍCIO SIDEBAR -->
+
+            <aside class="col-lg-3 border ms-2 rounded-2 mb-4 p-0 pb-2">
+                <ul class="list-group list-group-flush">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Calculadoras</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área de imóvel 3
+                            Lados diferentes</a>
+                        </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área de imóvel 4
+                            Lados diferentes</a>
+                        </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-metros-quadrados.html">Calular metros quadrados</a>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geradores</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/gerador-de-recibos-online.html">Gerador de
+                            recibos</a>
+                    </li>
+                </ul>
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geral</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/sortear-times.html">Sortear times</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/cronometro-online.html">Cronômetro online</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-dark pt-3 pb-1">
+        <div class="container-lg text-center text-light">
+            <p>Copyright © 2023 <a
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://webtoolsbr.com.br/">Web Tools BR</a> – Todos os direitos reservados.</p>
+        </div>
+        <div class="container-lg text-center text-light">
+            <p>
+                <a href="/pages/politica-de-privacidade.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Política
+                    de
+                    privacidade</a> -
+                <a href="/pages/termos-e-condicoes.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Termos e
+                    condições</a> -
+                <a href="/pages/contato.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contato</a>
+            </p>
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+</body>
+
+</html>
