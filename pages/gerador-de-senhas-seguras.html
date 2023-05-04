@@ -3,8 +3,8 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG"></script>
-    <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG" defer></script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -14,13 +14,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronômento online - Web Tools BR</title>
-    <meta name="description" content="Cronômetro Online para marcar intervalos de tempo." />
-    <link rel=canonical href=https://webtoolsbr.com.br/pages/cronometro-online.html/ />
+    <title>Gerador de senhas seguras</title>
+    <meta name="description"
+        content="Gere senhas fortes e seguras rápido e fácil com essa ferramentas online grátis - Gerador de senhas online" />
+    <link rel=canonical href=https://webtoolsbr.com.br/pages/gerador-de-senhas-seguras.html />
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/cronometro.css">
+    <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+    <style>
+        footer p {
+            font-size: 12px;
+        }
+    </style>
     <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/senhas-seguras.js" defer></script>
 </head>
 
 <body>
@@ -85,28 +91,61 @@
         <div class="row">
             <section class="col-lg border py-5 mb-4 rounded-2 ">
                 <article>
-                    <div class="row">
-                        <h1 class="h2 text-center" style="font-size: 3rem;">Cronômetro online</h1>
-
-                        <div class="timer d-flex justify-content-center" style="font-size: 4rem;">
-                            <div class="minutes">00</div>
-                            <div class="separator">:</div>
-                            <div class="seconds">00</div>
-                            <div class="separator">:</div>
-                            <div class="milliseconds">000</div>
+                    <div class="form-password border border-light p-4" style="max-width: 500px; margin: auto;">
+                        <div class="form-header mb-4">
+                            <h1 class="h3 text-center">Gerador de senhas seguras</h1>
                         </div>
-
-                        <div class="buttons d-flex justify-content-center gap-3 mb-5 mt-3">
-                            <button class="btn start-btn btn-success">Iniciar</button>
-                            <button class="btn pause-btn btn-warning">Pausar</button>
-                            <button class="btn resume-btn btn-primary">Retomar</button>
-                            <button class="btn reset-btn btn-danger">Zerar</button>
+                        <div class="form-body">
+                            <div class="form-input d-flex justify-content-between">
+                                <label for="password-length">Tamanho da senhas</label>
+                                <input type="number" name="password-length" id="password-length" min="4" max="30"
+                                    value="10" oninput="validatePasswordLength()">
+                            </div>
+                            <div class="form-input d-flex justify-content-between mt-3">
+                                <label for="numbers">Contém números?</label>
+                                <input type="checkbox" id="numbers" checked>
+                            </div>
+                            <div class="form-input d-flex justify-content-between mt-1">
+                                <label for="upper">Contém letras maiúsculas?</label>
+                                <input type="checkbox" id="upper">
+                            </div>
+                            <div class="form-input d-flex justify-content-between mt-1">
+                                <label for="lower">Contém letras minúsculas?</label>
+                                <input type="checkbox" id="lower">
+                            </div>
+                            <div class="form-input d-flex justify-content-between mt-1 mb-3">
+                                <label for="symbols">Contém símbolos?</label>
+                                <input type="checkbox" id="symbols">
+                            </div>
+                        </div>
+                        <div class="area-btn mb-3">
+                            <button class="btn btn-dark" id="btn-password" style="width: 100%;">Gerar senha</button>
+                        </div>
+                        <div class="area-result">
+                            <p class="alert alert-light text-center" id="password-result">O valor da área aparecerá aqui
+                            </p>
+                            <div class="area-btn mb-3">
+                                <button class="btn btn-dark" id="btn-copy" style="width: 100%; display: none;">Copiar
+                                    senha</button>
+                            </div>
+                            <p class="alert alert-success text-center" id="password-copy" style="display: none;">Senha
+                                copiada com sucesso</p>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <hr class="hr">
-                      
-                    </div> -->
+                    <h2 class="h5 text-center mt-4 mb-4">Como funciona o gerador de senhas seguras?</h2>
+                    <p>Para usar nossa ferramenta, basta escolher qual o tamanho da senha, o valor tem que ser de 4 à 30
+                        caracteres.</p>
+                    <p>Depois você pode escolher quais os tipos de caracteres deve conter na senha que será gerada, para
+                        isso basta marcar a caixinha referente a opção desejada. depois disso é só clicar no botão
+                        <strong>gerar senha</strong>.</p>
+                    <p>Com a senha gerada, basta clicar em <strong>copiar senha</strong> e você já pode usar sua senha
+                        onde desejar.</p>
+
+                    <hr>
+                    <p class="h6">Veja outros geradores:</p>
+
+                    <p><a href="/pages/gerador-de-recibos-online.html">Como calcular área de terreno com 3 lados
+                            diferentes</a></p>
                 </article>
             </section>
             <!-- INÍCIO SIDEBAR -->
@@ -119,12 +158,12 @@
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
                             href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área de imóvel 3
                             Lados diferentes</a>
-                        </li>
+                    </li>
                     <li class="list-group-item">
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
                             href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área de imóvel 4
                             Lados diferentes</a>
-                        </li>
+                    </li>
                     <li class="list-group-item">
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
                             href="/pages/calcular-metros-quadrados.html">Calular metros quadrados</a>
@@ -184,7 +223,6 @@
 
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/cronometro.js"></script>
 </body>
 
 </html>
