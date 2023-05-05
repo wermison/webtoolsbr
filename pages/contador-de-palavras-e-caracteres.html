@@ -14,13 +14,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sortear times</title>
+    <title>Contador de palavras e caracteres</title>
     <meta name="description"
-        content="Ferramenta para sortear times para partidas de futebol ou qualquer outro esporte" />
-    <link rel=canonical href=https://webtoolsbr.com.br/pages/sortear-times.html />
+        content="Conte a quantidade de caracteres e de palavras que seu texto contém - Ferramenta online para contar letras e palavras" />
+    <link rel=canonical href=https://webtoolsbr.com.br/pages/contador-de-palavras-e-caracteres.html />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="shortcut icon" href="/assets/images/icone.png">
+    <link rel="stylesheet" href="/assets/css/contador-de-palavras-e-caracteres.css">
+    <style>
+        footer p {
+            font-size: 12px;
+        }
+    </style>
 </head>
 
 <body>
@@ -85,49 +90,37 @@
         <div class="row">
             <section class="col-lg border py-5 mb-4 rounded-2 ">
                 <article>
-                    <div class="row">
-                        <div class="area-sorteio-main">
-                            <div class="area-sorteio">
-                                <h1>Sortear times</h1>
-                                <label for="num-players" class="h5">Quantidade de jogadores por equipe:</label>
-                                <input type="number" id="num-players" name="num-players"
-                                    placeholder="Digite a quantedade de jogadores por equipe"
-                                    class="form-control form-control-sm">
-
-                                <label for="player-names" class="h5">Nomes dos jogadores:</label>
-                                <textarea id="player-names" name="player-names" rows="10"
-                                    placeholder="Digite o nome por linha"
-                                    class="form-control form-control-sm"></textarea>
-
-                                <button id="sortear" class="btn btn-dark">Sortear times</button>
-
-                                <div id="resultado">
-                                    <p class="alert alert-light">Os times sorteados aparecerão aqui</p>
-                                </div>
-                                <hr>
-                                <h6>Como o <strong>sortear times</strong> funciona?</h6>
-
-                                <p>Esta ferramenta gera um sorteio de times que permite que o você digite o nome de cada
-                                    jogador e escolha quantos jogadores cada time terá.</p>
-
-                                <p> Quando você digita o nome dos jogadores e quantidade de jogadores que cada time
-                                    terá,
-                                    basta clicar em "Sortear Times", logo em seguida será exibida a lista com as equipes
-                                    dividas aletoriamente de acordo com os dados informados.
-                                </p>
-                                <hr>
-                            </div>
-
-
-
+                    <div class="area-counter">
+                        <div class="header-counter">
+                            <h1 class="h3 text-center">Contador de palavras e caracteres online</h1>
                         </div>
-
-
+                        <div class="input-counter d-flex flex-column">
+                            <p>Digite ou cole o texto no campo abaixo:</p>
+                            <textarea name="input-area" id="input-area" rows="12"></textarea>
+                        </div>
+                        <div class="result-area d-flex gap-5">
+                            <p>Caracteres: <b id="result-characters">0</b></p>
+                            <p>Palavras: <b id="result-words">0</b></p>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-dark" id="btn-clear">Limpar</button>
+                        </div>
                     </div>
-                    <!-- <div class="row">
-                        <hr class="hr">
-                      
-                    </div> -->
+                    <h4 class="h5 mt-5">O que é o <strong class="h5">Contador de Palavras e Caracteres</strong>?</h4>
+                    <p>
+                        Nosso <strong>contador de palavras e caracteres</strong> é uma ferramenta muito simples, para
+                        utilizá-la basta colar ou digitar o texto que deseja fazer a contagem, o resultado irá aparecer
+                        em tempo real logo abaixo da caixa de texto.
+                    </p>
+                    <h4 class="h5 mt-5">Por que usar o <strong class="h5">Contador de Palavras e Caracteres</strong>
+                        Online?</h4>
+                    <p>
+                        Saber quantos caracteres um texto possui é muito importante, principalmente pra que deseja fazer
+                        postagens no Twitter, por exemplo, já que a rede social limita em 140 caracteres em cada
+                        postagem. Outra utilidade é em campanha de links patrocinados (35 caracteres para o título do
+                        anúncio, 70 para o texto e 35 para a URL de destino)ou até as meta-tags do SEO (a otimização de
+                        sites, que tem 63 caracteres no title e 160 no description).
+                    </p>
                 </article>
             </section>
             <!-- INÍCIO SIDEBAR -->
@@ -140,12 +133,12 @@
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
                             href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área de imóvel 3
                             Lados diferentes</a>
-                        </li>
+                    </li>
                     <li class="list-group-item">
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
                             href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área de imóvel 4
                             Lados diferentes</a>
-                        </li>
+                    </li>
                     <li class="list-group-item">
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
                             href="/pages/calcular-metros-quadrados.html">Calular metros quadrados</a>
@@ -209,7 +202,7 @@
 
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/scripts.js"></script>
+    <script src="/assets/js/contador-de-palavras-e-caracteres.js"></script>
 </body>
 
 </html>
