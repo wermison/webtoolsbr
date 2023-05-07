@@ -13,6 +13,13 @@ firstUpper.addEventListener('input', converter);
 btnCopy.addEventListener('click', copy);
 
 function converter() {
+    btnCopy.style.display = 'block';
+    success.style.display = 'none'
+
+    if (input.value == "") {
+        btnCopy.style.display = 'none'
+    }
+
     if (upper.checked) {
         result.value = input.value.toUpperCase();
     } else if (lower.checked) {
@@ -42,9 +49,6 @@ function converter() {
 
         result.value = toFirstUpper(input.value)
     }
-
-    btnCopy.style.display = 'block';
-    success.style.display = 'none'
 }
 
 function copy() {
