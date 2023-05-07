@@ -14,13 +14,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronômento online - Web Tools BR</title>
-    <meta name="description" content="Cronômetro Online para marcar intervalos de tempo." />
-    <link rel=canonical href=https://webtoolsbr.com.br/pages/cronometro-online.html/ />
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/cronometro.css">
+    <title>Converter em Maúsculas e Minúsculas</title>
+    <meta name="description"
+        content="Ferramenta online grátis para converter letras maiúsculas e minúsculas de forma rápida e simples" />
+    <link rel=canonical href=https://webtoolsbr.com.br/pages/converter-palavras-em-maiusculas-e-minusculas.html />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/maiusculas-e-minusculas.js" defer></script>
+    <style>
+        footer p {
+            font-size: 12px;
+        }
+    </style>
 </head>
 
 <body>
@@ -84,29 +89,41 @@
     <main class="container-lg mt-4">
         <div class="row">
             <section class="col-lg border py-5 mb-4 rounded-2 ">
-                <article>
-                    <div class="row">
-                        <h1 class="h2 text-center" style="font-size: 3rem;">Cronômetro online</h1>
-
-                        <div class="timer d-flex justify-content-center" style="font-size: 4rem;">
-                            <div class="minutes">00</div>
-                            <div class="separator">:</div>
-                            <div class="seconds">00</div>
-                            <div class="separator">:</div>
-                            <div class="milliseconds">000</div>
+                <article class="d-flex flex-column gap-2">
+                    <div class="title-area">
+                        <h1 class="h2">Converter em Maiúsculas e Minúsculas</h1>
+                    </div>
+                    <div class="input-area d-flex flex-column">
+                        <textarea class="p-2" id="input" rows="12"
+                            placeholder="Digite o texto para ser convertido"></textarea>
+                    </div>
+                    <div class="select-area d-flex gap-3">
+                        <div class="upper-select">
+                            <input type="radio" id="upper" name="select-input" checked>
+                            <label for="upper">Maiúsculas</label>
                         </div>
-
-                        <div class="buttons d-flex justify-content-center gap-3 mb-5 mt-3">
-                            <button class="btn start-btn btn-success">Iniciar</button>
-                            <button class="btn pause-btn btn-warning">Pausar</button>
-                            <button class="btn resume-btn btn-primary">Retomar</button>
-                            <button class="btn reset-btn btn-danger">Zerar</button>
+                        <div class="lower-select">
+                            <input type="radio" id="lower" name="select-input">
+                            <label for="lower">Minúsculas</label>
+                        </div>
+                        <div class="lower-select">
+                            <input type="radio" id="first-upper" name="select-input">
+                            <label for="first-upper">Primeira Maiúscula</label>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <hr class="hr">
-                      
-                    </div> -->
+                    <div class="arrow-area d-flex justify-content-center">
+                        <img src="/assets/images/arrow_down.png" alt="Converter em Maiúsculas e Minúsculas"
+                            style="width: 64px; height: auto;">
+                    </div>
+                    <div class="result-area d-flex flex-column">
+                        <textarea class="p-2" id="result" rows="12"
+                            placeholder="O texto convertido aparecerá aqui"></textarea>
+                        <button class="btn btn-dark mt-3" id="btn-copy" style="width: 100%;display: none;">Copiar
+                            texto</button>
+                        <p class="alert alert-success text-center mt-3" id="success-copy" style="display: none;">
+                            Texto convertido copiado com sucesso
+                        </p>
+                    </div>
                 </article>
             </section>
             <!-- INÍCIO SIDEBAR -->
@@ -196,7 +213,6 @@
 
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/cronometro.js"></script>
 </body>
 
 </html>
