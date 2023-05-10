@@ -25,26 +25,30 @@ function converter() {
     } else if (lower.checked) {
         result.value = input.value.toLowerCase();
     } else if (firstUpper.checked) {
-        function toFirstUpper() {
-            let lowered = input.value.toLowerCase();
-            let words = lowered.split(" ");
+        // function toFirstUpper() {
+        //     let lowered = input.value.toLowerCase();
+        //     let words = lowered.split(" ");
 
-            for (i = 0; i < words.length; i++) {
-                let word = words[i];
-                let firstLetter = word[0];
+        //     for (i = 0; i < words.length; i++) {
+        //         let word = words[i];
+        //         let firstLetter = word[0];
 
-                if (word.length == 0) {
-                    word = "";
-                } else if (word.length > 2) {
-                    word = firstLetter.toUpperCase() + word.slice(1);
-                } else {
-                    word = firstLetter + word.slice(1);
-                }
+        //         if (word.length == 0) {
+        //             word = "";
+        //         } else if (word.length > 2) {
+        //             word = firstLetter.toUpperCase() + word.slice(1);
+        //         } else {
+        //             word = firstLetter + word.slice(1);
+        //         }
 
-                words[i] = word
-            }
+        //         words[i] = word
+        //     }
 
-            return words.join(" ");
+        //     return words.join(" ");
+        // }
+
+        function toFirstUpper(str) {
+            return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
         }
 
         result.value = toFirstUpper(input.value)
