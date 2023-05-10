@@ -3,10 +3,13 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG" defer></script>
-    <script defer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-78XKB12PQG');
@@ -14,19 +17,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de senhas seguras</title>
+    <title>Inverter Texto</title>
     <meta name="description"
-        content="Gere senhas fortes e seguras rápido e fácil com essa ferramentas online grátis - Gerador de senhas online" />
-    <link rel=canonical href=https://webtoolsbr.com.br/pages/gerador-de-senhas-seguras.html />
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+        content="Ferramenta online grátis para inverter texto, colocar texto de trás para frente online - ex: abc -> cba" />
+    <link rel=canonical href=https://webtoolsbr.com.br/pages/inverter-texto.html />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/inverter-texto.js" defer></script>
     <style>
         footer p {
             font-size: 12px;
         }
     </style>
-    <link rel="shortcut icon" href="/assets/images/icone.png">
-    <script src="/assets/js/senhas-seguras.js" defer></script>
 </head>
 
 <body>
@@ -89,64 +91,41 @@
 
     <main class="container-lg mt-4">
         <div class="row">
-            <section class="col-lg border py-5 mb-4 rounded-2 ">
-                <article>
-                    <div class="form-password border border-light p-4" style="max-width: 500px; margin: auto;">
-                        <div class="form-header mb-4">
-                            <h1 class="h3 text-center">Gerador de senhas seguras</h1>
-                        </div>
-                        <div class="form-body">
-                            <div class="form-input d-flex justify-content-between">
-                                <label for="password-length">Tamanho da senhas</label>
-                                <input type="number" name="password-length" id="password-length" min="4" max="30"
-                                    value="16" oninput="validatePasswordLength()">
-                            </div>
-                            <div class="form-input d-flex justify-content-between mt-3">
-                                <label for="numbers">Contém números?</label>
-                                <input type="checkbox" id="numbers" checked>
-                            </div>
-                            <div class="form-input d-flex justify-content-between mt-1">
-                                <label for="upper">Contém letras maiúsculas?</label>
-                                <input type="checkbox" id="upper" checked>
-                            </div>
-                            <div class="form-input d-flex justify-content-between mt-1">
-                                <label for="lower">Contém letras minúsculas?</label>
-                                <input type="checkbox" id="lower" checked>
-                            </div>
-                            <div class="form-input d-flex justify-content-between mt-1 mb-3">
-                                <label for="symbols">Contém símbolos?</label>
-                                <input type="checkbox" id="symbols" checked>
-                            </div>
-                        </div>
-                        <div class="area-btn mb-3">
-                            <button class="btn btn-dark" id="btn-password" style="width: 100%;">Gerar senha</button>
-                        </div>
-                        <div class="area-result">
-                            <p class="alert alert-light text-center" id="password-result">O valor da área aparecerá aqui
-                            </p>
-                            <div class="area-btn mb-3">
-                                <button class="btn btn-dark" id="btn-copy" style="width: 100%; display: none;">Copiar
-                                    senha</button>
-                            </div>
-                            <p class="alert alert-success text-center" id="password-copy" style="display: none;">
-                                Senha copiada com sucesso
-                            </p>
-                        </div>
+            <section class="col-lg border py-2 mb-4 rounded-2 ">
+                <article class="d-flex flex-column gap-2">
+                    <div class="title-area">
+                        <h1 class="h2 text-center">Inverter Texto</h1>
                     </div>
-                    <h2 class="h5 text-center mt-4 mb-4">Como funciona o gerador de senhas seguras?</h2>
-                    <p>Para usar nossa ferramenta, basta escolher qual o tamanho da senha, o valor tem que ser de 4 à 30
-                        caracteres.</p>
-                    <p>Depois você pode escolher quais os tipos de caracteres deve conter na senha que será gerada, para
-                        isso basta marcar a caixinha referente a opção desejada. depois disso é só clicar no botão
-                        <strong>gerar senha</strong>.
-                    </p>
-                    <p>Com a senha gerada, basta clicar em <strong>copiar senha</strong> e você já pode usar sua senha
-                        onde desejar.</p>
+                    <div class="input-area d-flex flex-column">
+                        <textarea class="p-2" id="input" rows="11"
+                            placeholder="Digite o texto para ser convertido"></textarea>
+                    </div>
 
-                    <hr>
-                    <p class="h6">Veja outros geradores:</p>
+                    <div class="arrow-area d-flex justify-content-center">
+                        <img src="/assets/images/arrow_down.png" alt="Inverter texto"
+                            style="width: 34px; height: auto;">
+                    </div>
+                    <div class="result-area d-flex flex-column">
+                        <textarea class="p-2" id="result" rows="11"
+                            placeholder="O texto invertido aparecerá aqui"></textarea>
+                        <button class="btn btn-dark mt-3" id="btn-copy" style="width: 100%;display: none;">Copiar
+                            texto</button>
+                        <p class="alert alert-success text-center mt-3" id="success-copy" style="display: none;">
+                            Texto convertido copiado com sucesso
+                        </p>
+                    </div>
+                    <div class="area-info mt-5">
+                        <h4 class="h5">Como funciona o <strong class="h5">Inversor de texto</strong>?
+                        </h4>
+                        <p>
+                            Nossa ferramenta para <strong>inverter texto ou frase</strong> funciona de maneira muito
+                            simples, basta você digitar seu texto, frase ou string dentro da primeira caixa de texto que
+                            automaticamente o resultado com o texto já invertido aparecerá dentro da segunda caixa de
+                            texto. Depois disso é só clicar no botão <b>Copiar texto</b> e usá seu texto invertido.
+                        </p>
 
-                    <p><a href="/pages/gerador-de-recibos-online.html">Gerador de recibos online</a></p>
+
+                    </div>
                 </article>
             </section>
             <!-- INÍCIO SIDEBAR -->
@@ -189,7 +168,8 @@
                         style="margin: 0; background-color: #333;"><span class="h6">Conversores</span></p>
                     <li class="list-group-item">
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
-                            href="/pages/converter-palavras-em-maiusculas-e-minusculas.html">Converter em Maiúsculas e Minúsculas</a>
+                            href="/pages/converter-palavras-em-maiusculas-e-minusculas.html">Converter em Maiúsculas e
+                            Minúsculas</a>
                     </li>
                 </ul>
                 <ul class="list-group list-group-flush mt-3">
