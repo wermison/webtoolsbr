@@ -3,8 +3,8 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG"></script>
-    <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG" defer></script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -14,13 +14,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sortear times</title>
+    <title>Calculadora de Horas</title>
     <meta name="description"
-        content="Ferramenta para sortear times para partidas de futebol ou qualquer outro esporte" />
-    <link rel=canonical href="https://webtoolsbr.com.br/pages/sortear-times.html" />
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+        content="Ferramenta online grátis para calcular horas - use nosso app para calcular horas trabalhadas, hora extras e muito mais" />
+    <link rel=canonical href="https://webtoolsbr.com.br/pages/calculadora-de-horas.html">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/calculadora-de-horas.js" defer></script>
 </head>
 
 <body>
@@ -86,43 +87,53 @@
             <section class="col-lg border py-5 mb-4 rounded-2 ">
                 <article>
                     <div class="row">
-                        <div class="area-sorteio-main">
-                            <div class="area-sorteio">
-                                <h1>Sortear times</h1>
-                                <label for="num-players" class="h5">Quantidade de jogadores por equipe:</label>
-                                <input type="number" id="num-players" name="num-players"
-                                    placeholder="Digite a quantedade de jogadores por equipe"
-                                    class="form-control form-control-sm">
+                        <h1 class="fs-3 mb-4 text-center">
+                            Calculadora de horas
+                        </h1>
 
-                                <label for="player-names" class="h5">Nomes dos jogadores:</label>
-                                <textarea id="player-names" name="player-names" rows="10"
-                                    placeholder="Digite o nome por linha"
-                                    class="form-control form-control-sm"></textarea>
+                        <div class="col-lg">
 
-                                <button id="sortear" class="btn btn-dark">Sortear times</button>
-
-                                <div id="resultado">
-                                    <p class="alert alert-light">Os times sorteados aparecerão aqui</p>
-                                </div>
-                                <hr>
-                                <h6>Como o <strong>sortear times</strong> funciona?</h6>
-
-                                <p>Esta ferramenta gera um sorteio de times que permite que o você digite o nome de cada
-                                    jogador e escolha quantos jogadores cada time terá.</p>
-
-                                <p> Quando você digita o nome dos jogadores e quantidade de jogadores que cada time
-                                    terá,
-                                    basta clicar em "Sortear Times", logo em seguida será exibida a lista com as equipes
-                                    dividas aletoriamente de acordo com os dados informados.
-                                </p>
-                                <hr>
+                            <div class="mb-3">
+                                <label class="form-label">Hora Inicial:</label>
+                                <input type="time" class="form-control form-control-sm text-center" id="start-time"
+                                    value="08:00">
                             </div>
 
+                            <div class="mb-3">
+                                <label class="form-label">Hora Final:</label>
+                                <input type="time" class="form-control form-control-sm text-center" id="end-time"
+                                    value="14:00">
+                            </div>
 
+                            <div id="calcular" class="d-grid">
+                                <button type="button" class="btn btn-dark mb-2" onclick="calcular()">Calcular</button>
+                            </div>
 
+                            <div id="result">
+                                <p class="alert alert-light text-center">O valor da área aparecerá aqui</p>
+                            </div>
                         </div>
 
+                        <h3 class="mt-5">Como é feito o calculo de horas?</h3>
 
+                        <p style="text-align: justify;">
+                            Nossa ferramenta para <strong>calcular as horas</strong> é muito simples e plática, basta
+                            você selecionar a hora de início no primeiro campo, e depois a hora final no segundo campo.
+                            Depois é só clicar no botão <b>calcular</b>, que a diferença entre as duas horas aparecerá
+                            logo abaixo.
+                        </p>
+                        <p> </p>
+
+
+
+                        <hr>
+                        <p class="h6">Veja também:</p>
+                        <a href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Como calcular
+                            área de terreno com 3 lados diferentes</a>
+                        <a href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Como calcular
+                            área de terreno com 4 lados diferentes</a>
+                        <a href="/pages/calcular-metros-quadrados.html"> Calcular metros
+                            quadrados</a>
                     </div>
                     <!-- <div class="row">
                         <hr class="hr">
@@ -174,7 +185,8 @@
                         style="margin: 0; background-color: #333;"><span class="h6">Conversores</span></p>
                     <li class="list-group-item">
                         <a class="link-offset-2 link-underline link-underline-opacity-0"
-                            href="/pages/converter-palavras-em-maiusculas-e-minusculas.html">Converter em Maiúsculas e Minúsculas</a>
+                            href="/pages/converter-palavras-em-maiusculas-e-minusculas.html">Converter em Maiúsculas e
+                            Minúsculas</a>
                     </li>
                 </ul>
                 <ul class="list-group list-group-flush mt-3">
@@ -225,7 +237,6 @@
 
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>
