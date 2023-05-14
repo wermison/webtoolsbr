@@ -95,7 +95,7 @@ function validarCPF(cpf) {
 }
 
 function valid() {
-    btnCopy.style.display = 'none'
+    btnCopy.style.display = 'block'
 
     if (validarCPF(cpf.value)) {
         msnCopy.innerHTML = `<p class="alert alert-success text-center">O número de CPF é VÁLIDO</p>`
@@ -104,6 +104,10 @@ function valid() {
         msnCopy.innerHTML = `<p class="alert alert-danger text-center">O número de CPF é INVÁLIDO</p>`
         msnCopy.style.display = 'block'
     }
+
+    setTimeout(() => {
+        msnCopy.style.display = 'none'
+    },5000)
 }
 
 const handleCpf = (event) => {
@@ -146,4 +150,8 @@ function copyPassword() {
     navigator.clipboard.writeText(textCopy.value);
 
     msnCopy.style.display = 'block'
+
+    setTimeout(() => {
+        msnCopy.style.display = 'none'
+    },5000)
 }
