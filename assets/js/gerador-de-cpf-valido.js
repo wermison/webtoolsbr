@@ -145,7 +145,7 @@ const cpfMask = (value) => {
 btnCopy.addEventListener('click', copyPassword);
 
 function copyPassword() {
-    msnCopy.innerHTML = `<p class="alert alert-success text-center">CPF copiada com sucesso</p>`
+    msnCopy.innerHTML = `<p class="alert alert-primary text-center">CPF copiado com sucesso</p>`
     const textCopy = document.querySelector('#cpf');
     navigator.clipboard.writeText(textCopy.value);
 

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de porcentagem online - Web Tools BR</title>
+    <meta name="description"
+        content="Calculadora de porcentagem online grátis. Ferramenta online que permite calcular a porcentagem de valores de várias formas gratuitamente - Web Tools BR" />
+    <link rel=canonical href="https://webtoolsbr.com.br/pages/calculadora-de-porcentagem.html" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/cookiealert.css">
+    <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+    <style>
+        footer p {
+            font-size: 12px;
+        }
+    </style>
+    <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/calculadora-de-porcentagem.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG" defer></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78XKB12PQG');
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-lg">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo.svg" alt="Logo" width="30" height="30"
+                        class="d-inline-block align-text-top">
+                    Web Tools BR
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Calculadoras
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área
+                                        de terreno com 3 lados diferentes</a></li>
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área
+                                        de terreno com 4 lados diferentes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geradores
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/gerador-de-recibos-online.html">Gerador de
+                                        recibos online</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geral
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/sortear-times.html">Sortear times</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-lg mt-4">
+        <div class="row">
+            <section class="col-lg border py-5 mb-4 rounded-2 ">
+                <article>
+                    <div class="form-password p-4 d-flex flex-column justify-content-center align-items-center gap-2">
+                        <div class="form-header mb-4">
+                            <h1 class="h3 text-center">Calculadora de porcentagem</h1>
+                        </div>
+                        <div class="calc-1 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 01</p>
+                            <div class="text-center gap-2 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                Quanto é
+                                <div class="input-group  input-group-sm" id="group-n1-calc1">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-1--value1" placeholder="--" oninput="validN1Calc1()"><span
+                                        class="input-group-text" id="span-n1-calc1">%</span>
+                                </div>
+                                de <input type="number" class="form-control form-control-sm text-center"
+                                    id="calc-1--value2" placeholder="--" oninput="validN2Calc1()">
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-1--btn">Calcular</button>
+                            </div>
+                            <div id="calc-1--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                        <div class="calc-2 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 02</p>
+                            <div class="text-center gap-2 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                O valor
+                                <div class="input-group  input-group-sm" id="group-n1-calc2">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-2--value1" placeholder="--" oninput="validN1Calc2()">
+                                </div>
+                                é quantos porcento de <input type="number"
+                                    class="form-control form-control-sm text-center" id="calc-2--value2"
+                                    placeholder="--" oninput="validN2Calc2()">
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-2--btn">Calcular</button>
+                            </div>
+                            <div id="calc-2--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                        <div class="calc-3 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 03</p>
+                            <div class="text-center gap-1 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                O valor
+                                <div class="input-group  input-group-sm" id="group-n1-calc3">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-3--value1" placeholder="--" oninput="validN1Calc3()">
+                                </div>
+                                <p><b>AUMENTOU</b> para</p>
+                                <input type="number" class="form-control form-control-sm text-center"
+                                    id="calc-3--value2" placeholder="--" oninput="validN2Calc3()">
+                                de quantos porcento (%) foi o aumento?
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-3--btn">Calcular</button>
+                            </div>
+                            <div id="calc-3--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                        <div class="calc-4 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 04</p>
+                            <div class="text-center gap-1 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                O valor
+                                <div class="input-group  input-group-sm" id="group-n1-calc4">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-4--value1" placeholder="--" oninput="validN1Calc4()">
+                                </div>
+                                <p><b>DIMINUIU</b> para</p>
+                                <input type="number" class="form-control form-control-sm text-center"
+                                    id="calc-4--value2" placeholder="--" oninput="validN2Calc4()">
+                                em quantos porcento (%) o valor diminuiu?
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-4--btn">Calcular</button>
+                            </div>
+                            <div id="calc-4--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                        <div class="calc-5 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 05</p>
+                            <div class="text-center gap-1 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                O valor
+                                <div class="input-group  input-group-sm" id="group-n1-calc5">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-5--value1" placeholder="--" oninput="validN1Calc5()">
+                                </div>
+                                <p>equivale a quantos porcento (%) de</p>
+                                <input type="number" class="form-control form-control-sm text-center"
+                                    id="calc-5--value2" placeholder="--" oninput="validN2Calc5()">
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-5--btn">Calcular</button>
+                            </div>
+                            <div id="calc-5--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                        <div class="calc-6 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 06</p>
+                            <div class="text-center gap-2 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                Tenho um valor
+                                <input type="number" class="form-control form-control-sm text-center"
+                                    id="calc-6--value1" placeholder="--" oninput="validN1Calc6()">
+                                e quero <b>aumentar</b>
+                                <div class="input-group  input-group-sm" id="group-n2-calc6">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-6--value2" placeholder="--" oninput="validN2Calc6()"><span
+                                        class="input-group-text" id="span-n2-calc6">%</span>
+                                </div>
+                                Qual valor terei?
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-6--btn">Calcular</button>
+                            </div>
+                            <div id="calc-6--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                        <div class="calc-7 border border-light pt-2 d-flex flex-column justify-content-center align-items-center gap-4"
+                            style="width: 100%; background-color: #EEE;">
+                            <p class="h5">Opção 07</p>
+                            <div class="text-center gap-2 d-flex flex-column" style="width: 40%; max-width: 500px;">
+                                Tenho um valor
+                                <input type="number" class="form-control form-control-sm text-center"
+                                    id="calc-7--value1" placeholder="--" oninput="validN1Calc7()">
+                                e quero <b>diminuir</b>
+                                <div class="input-group  input-group-sm" id="group-n2-calc7">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        id="calc-7--value2" placeholder="--" oninput="validN2Calc7()"><span
+                                        class="input-group-text" id="span-n2-calc7">%</span>
+                                </div>
+                                Qual valor terei?
+                            </div>
+                            <div>
+                                <button class="btn btn-dark" id="calc-7--btn">Calcular</button>
+                            </div>
+                            <div id="calc-7--result" style="max-width: 300px;">
+                                <p class="alert alert-light text-center">O resultado aparecerá aqui</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="h5 text-center mt-4 mb-4">O que é a Ferramenta de <strong class="h5">Calcular
+                            Porcentagem</strong>?</h3>
+                    <p>
+                        Nossa ferramenta online e gratuita calcula de varias maneiras diferentes a porcentagem entre
+                        dois números.
+                    </p>
+                    <h4 class="h5 text-center mt-4 mb-4">Como utilizar a calculadora</h4>
+                    <p>Basta escolher a opção de uma das calculadoras que mais se adequa a seu problema, logo em seguida
+                        preencha os campos com os valores desejados e clique em calcular, o resultado será exibido logo abaixo </p>
+
+                    <hr>
+                    <p class="h6">Veja outras calculadoras:</p>
+
+                    <p><a href="/pages/calculadora-de-horas.html">Calculadora de horas</a></p>
+                    <p><a href="/pages/calcular-metros-quadrados.html">Calcular metros quadrados</a></p>
+                </article>
+            </section>
+            <!-- INÍCIO SIDEBAR -->
+
+            <aside class="col-lg-3 border ms-2 rounded-2 mb-4 p-0 pb-2">
+                <ul class="list-group list-group-flush">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Calculadoras</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área de imóvel 3
+                            Lados diferentes</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área de imóvel 4
+                            Lados diferentes</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calcular-metros-quadrados.html">Calcular metros quadrados</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calculadora-de-horas.html">Calcular horas</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/calculadora-de-porcentagem.html">Calcular porcentagem</a>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geradores</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/gerador-de-recibos-online.html">Gerador de
+                            recibos</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/gerador-de-senhas-seguras.html">Gerador de senhas seguras</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/gerador-de-cpf-valido.html">Gerador de CPF válido</a>
+                    </li>
+                </ul>
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Conversores</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/converter-palavras-em-maiusculas-e-minusculas.html">Converter em Maiúsculas e
+                            Minúsculas</a>
+                    </li>
+                </ul>
+                <ul class="list-group list-group-flush mt-3">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geral</span></p>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/sortear-times.html">Sortear times</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/cronometro-online.html">Cronômetro online</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/contador-de-palavras-e-caracteres.html">Contador de palavras e caracteres</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0"
+                            href="/pages/inverter-texto.html">Inverter texto</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-dark pt-3 pb-1">
+        <div class="container-lg text-center text-light">
+            <p>Copyright © 2023 <a
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://webtoolsbr.com.br/">Web Tools BR</a> – Todos os direitos reservados.</p>
+        </div>
+        <div class="container-lg text-center text-light">
+            <p>
+                <a href="/pages/politica-de-privacidade.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Política
+                    de
+                    privacidade</a> -
+                <a href="/pages/termos-e-condicoes.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Termos e
+                    condições</a> -
+                <a href="/pages/contato.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contato</a>
+            </p>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- START Bootstrap-Cookie-Alert -->
+    <div class="alert text-center cookiealert" role="alert">
+        <b>Utilizamos cookies essenciais e tecnologias semelhantes</b> &#x1F36A; para aprimorar sua experiência de
+        navegação de acordo com nossa <a href="/pages/politica-de-privacidade.html" target="_blank">Política de
+            Privacidade</a>.
+
+        <button type="button" class="btn btn-primary btn-sm acceptcookies">
+            Concordo
+        </button>
+    </div>
+    <!-- END Bootstrap-Cookie-Alert -->
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/cookiealert.js"></script>
+</body>
+
+</html>
