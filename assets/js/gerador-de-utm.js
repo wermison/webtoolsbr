@@ -47,7 +47,7 @@ function generate() {
         let newTerms = termsUtm.value == '' ? termsUtm.value : `&utm_term=${termsUtm.value}`;
         let newContent = contentUtm.value == '' ? contentUtm.value : `&utm_content=${contentUtm.value}`;
 
-        let result = `${formatUrl}?utm_source=${originUtm.value}&utm_medium=${typeUtm.value}&utm_campaign=${nameUtm.value}${newCode}${newTerms}${newContent}`;
+        let result = `${formatUrl.toLowerCase()}?utm_source=${originUtm.value}&utm_medium=${typeUtm.value}&utm_campaign=${nameUtm.value}${newCode}${newTerms}${newContent}`;
 
         let newResult = result.replace(/ /g, '+');
 
