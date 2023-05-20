@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/cookiealert.css">
     <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/data.js" defer></script>
+    <script src="/assets/js/search-home.js" defer></script>
 
 </head>
 
@@ -78,12 +80,35 @@
         <div class="row">
             <section class="col-lg border py-5 mb-4 rounded-2">
                 <article>
-                    <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center mb-5">
                         <h1 class="h3 text-center">Web Tools BR</h1>
                         <p class="" style="text-align: justify; max-width: 700px;">Bem-vindo(a) ao site <a href="/">Web
                                 Tools BR</a>, aqui você irá encontrar diversas ferramentas online e gratuitas. Algumas
                             dessas ferramentas são calcularadoras de áreas, geradores de recibos, conversores de
                             medidas, dentre muitas outras coisas que facilitarão seu dia a dia.</p>
+                        <h4 class="">Faça uma pesquisa em nossas ferramentas disponíveis</h4>
+                        <div class="input-group  input-group-sm" style="text-align: justify; max-width: 700px;">
+                            <input type="text" class="form-control text-center" id="search" placeholder="Pesquise no site">
+                        </div>
+                    </div>
+
+                    <div class="models" style="display: none;">
+                        <div class="post-item mt-3">
+                            <a href="#" class="link-offset-2 link-underline link-underline-opacity-0">
+                                <div class="search-item border border-light rounded-2 p-2">
+                                    <div>
+                                        <h1 id="title" class="h5">Título</h1>
+                                    </div>
+                                    <div>
+                                        <p class="text-dark ps-3" id="desc" style="font-size: .9rem;">Descrição</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="post-area">
+
                     </div>
 
                 </article>
