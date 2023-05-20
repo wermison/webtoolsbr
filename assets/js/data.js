@@ -47,7 +47,7 @@ let data = [
     { 
         title: "Gerador de CPF Válido", 
         desc: "Gerador de CPF online e gratuito - Gere CPF válidos para usar em suas aplicações - Valide CPF com essa ferramenta simples e gratuita", 
-        link: "/pages/gerar-cpf-valido.html" 
+        link: "/pages/gerador-de-cpf-valido.html" 
     },
     { 
         title: "Gerador de recibos", 
