@@ -11,7 +11,7 @@ data.map((item, index) => {
     document.querySelector('.post-area').append(postItem);
 });
 
-// btnSearch.addEventListener('click', listSearch);
+btnSearch.addEventListener('click', listSearch);
 
 
 function listSearch() {
