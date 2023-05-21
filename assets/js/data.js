@@ -2,7 +2,7 @@ let data = [
     { 
         title: "Calculadora de Horas", 
         desc: "Ferramenta online grátis para calcular horas - use nosso app para calcular horas trabalhadas, hora extras e muito mais.", 
-        link: "/pages/gerador-de-utm.html" 
+        link: "/pages/calculadora-de-horas.html" 
     },
     { 
         title: "Calculadora de porcentagem", 
