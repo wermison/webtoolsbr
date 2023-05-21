@@ -73,6 +73,11 @@ let data = [
         title: "Sortear times", 
         desc: "Ferramenta para sortear times para partidas de futebol ou qualquer outro esporte", 
         link: "/pages/sortear-times.html" 
+    },
+    { 
+        title: "Contador de dias entre datas", 
+        desc: "Para contar dias usando nossa ferramenta basta selecionar as duas datas em que quer se saber a diferença e clicar em calcular data.", 
+        link: "/pages/contador-de-dias-entre-datas.html" 
     }
 ];
 
