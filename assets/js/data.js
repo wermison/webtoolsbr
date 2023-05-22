@@ -1,4 +1,4 @@
-let dataPages = [
+let data = [
     { 
         title: "Calculadora de Horas", 
         desc: "Ferramenta online grátis para calcular horas - use nosso app para calcular horas trabalhadas, hora extras e muito mais.", 
@@ -32,7 +32,7 @@ let dataPages = [
     { 
         title: "Calcular metros quadrados", 
         desc: "Ferramenta simple e grátis para calcular metros quadrado - calculadora de metros quadrados - m2", 
-        link: "/pages/calcular-metros-quadrados.html" ,
+        link: "/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html" ,
         category: "Calculadoras"
     },
     { 
