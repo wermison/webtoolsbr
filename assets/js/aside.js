@@ -1,4 +1,4 @@
-data.filter((item)=> {
+dataPages.filter((item)=> {
     let itemCalc = document.querySelector('.aside-model .aside-model-item').cloneNode(true);
     if (item.category == "Calculadoras") {
 
