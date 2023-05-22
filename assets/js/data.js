@@ -1,4 +1,4 @@
-let data = [
+let dataPosts = [
     { 
         title: "Calculadora de Horas", 
         desc: "Ferramenta online grátis para calcular horas - use nosso app para calcular horas trabalhadas, hora extras e muito mais.", 
