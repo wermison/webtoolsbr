@@ -94,6 +94,12 @@ let dataPosts = [
         desc: "Para contar dias usando nossa ferramenta basta selecionar as duas datas em que quer se saber a diferença e clicar em calcular data.", 
         link: "/pages/contador-de-dias-entre-datas.html" ,
         category: "Calculadoras"
+    },
+    { 
+        title: "Conversor de temperatura", 
+        desc: "Conversor de temperatura onlie que converte automaticamente entre graus Celsius, Fahrenheit e Kelvin.", 
+        link: "/pages/conversor-de-temperatura.html" ,
+        category: "Conversores"
     }
 ];
 

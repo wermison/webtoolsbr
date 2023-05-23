@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperatura - Web Tools BR</title>
+    <meta name="description"
+        content="Conversor de temperatura onlie que converte automaticamente entre graus Celsius, Fahrenheit e Kelvin" />
+    <link rel=canonical href="https://webtoolsbr.com.br/pages/conversor-de-temperatura.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Conversor de temperatura - Web Tools BR" />
+    <meta property="og:description"
+        content="Conversor de temperatura onlie que converte automaticamente entre graus Celsius, Fahrenheit e Kelvin" />
+    <meta property="og:url" content="https://webtoolsbr.com.br/pages/conversor-de-temperatura.html" />
+    <meta property="og:site_name" content="Web Tools BR - Ferramentas Online Grátis" />
+    <meta property="article:published_time" content="2023-05-21T09:53:27+00:00" />
+    <meta property="og:image" content="https://webtoolsbr.com.br/assets/images/icone.png" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/cookiealert.css">
+    <style>
+        footer p {
+            font-size: 12px;
+        }
+    </style>
+    <link rel="shortcut icon" href="/assets/images/icone.png">
+    <script src="/assets/js/data.js" defer></script>
+    <script src="/assets/js/aside.js" defer></script>
+    <script src="/assets/js/conversor-de-temperatura.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG" defer></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78XKB12PQG');
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-lg">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo.svg" alt="Logo" width="30" height="30"
+                        class="d-inline-block align-text-top">
+                    Web Tools BR
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Calculadoras
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-3-lados-diferentes.html">Área
+                                        de terreno com 3 lados diferentes</a></li>
+                                <li><a class="dropdown-item"
+                                        href="/pages/calcular-area-de-terrenos-irregulares-4-lados-diferentes.html">Área
+                                        de terreno com 4 lados diferentes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geradores
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/gerador-de-recibos-online.html">Gerador de
+                                        recibos online</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Geral
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/sortear-times.html">Sortear times</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-lg mt-4">
+        <div class="row">
+            <section class="col-lg border py-5 mb-4 rounded-2 ">
+                <article>
+                    <h1 class="h4 text-center">Conversor de temperatura</h1>
+
+                    <div class="row gap-1 mt-5">
+                        <div class="col-sm">
+                            <label class="form-label" id="name-temp1"><span style="color: #F00;">*</span> Temperatura
+                                1</label>
+                            <input type="number" class="form-control text-center" placeholder="Digite a temperatura"
+                                id="temp-value" oninput="validateTemp()">
+                        </div>
+                        <div class="col-sm">
+                            <label class="form-label"><span style="color: #FFF;">*</span></label>
+                            <select class="form-select text-center" aria-label="Default select example" id="temp-1">
+                                <option value="c" id="c1" selected>Celsius</option>
+                                <option value="f">Fahrenheit</option>
+                                <option value="k">Kelvin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row gap-1 mt-3">
+                        <div class="col-sm">
+                            <label class="form-label" id="name-temp2">Temperatura 2</label>
+                            <input type="text" id="temp-result" class="form-control text-center" disabled>
+                        </div>
+                        <div class="col-sm">
+                            <label class="form-label"><span style="color: #FFF;">*</span></label>
+                            <select class="form-select text-center" aria-label="Default select example" id="temp-2">
+                                <option value="c">Celsius</option>
+                                <option value="f" selected>Fahrenheit</option>
+                                <option value="k">Kelvin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="area-button d-flex justify-content-center">
+                        <button class="btn btn-dark mt-3" style="width: 25%;" id="calculate-btn">
+                            Calcular
+                        </button>
+                    </div>
+
+                    <div id="area-result">
+                        <p class="alert alert-light text-center mt-4" id="result">
+                            O resultado aparecerá aqui
+                        </p>
+                    </div>
+
+                    <h2 class="h5 text-center mt-4 mb-4">Como funciona nosso conversor de temperatura?</h2>
+                    <p style="text-align: justify;">
+                        Nosso <strong>conversor de temperatura</strong> funciona de forma muita simples, basta
+                        selecionar nos dois campos as escalas de temperaturas no qual deseja fazer a converção,
+                        preenchendo o campo com o valor da temperatura, depois é só clicar no botão calcular que o
+                        resultado irá aparecer abaixo.
+                        Calculo pode ser feito para as 3 escalas: <strong>Celsius, Kelvin e Fahrenheit</strong>.
+                    </p>
+                    <!-- CELSIUS -->
+                    <h2 class="h5 mt-5">Como converter Celsius em Fahrenheit?</h2>
+                    <p style="text-align: justify;">
+                        Para transformar Celsius (°C) em Fahrenheit (°F) usa-se a seguinte fórmula:
+                    </p>
+                    <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
+                        <b>F = (C * 1,8) + 32 </b>
+                    </p>
+
+                    <h2 class="h5 mt-5">Como converter Celsius em Kelvin?</h2>
+                    <p style="text-align: justify;">
+                        Para transformar Celsius (°C) em Kelvin (K) usa-se a seguinte fórmula:
+                    </p>
+                    <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
+                        <b>K = C + 273,15</b>
+                    </p>
+                    
+
+                    <!-- KELVIN -->
+
+                    <h2 class="h5 mt-5">Como converter Kelvin em Celsius?</h2>
+                    <p style="text-align: justify;">
+                        Para transformar Kelvin (K) em Celsius (°C) usa-se a seguinte fórmula:
+                    </p>
+                    <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
+                        <b>C = K - 273,15</b>
+                    </p>
+                    <h2 class="h5 mt-5">Como converter Kelvin em Fahrenheit?</h2>
+                    <p style="text-align: justify;">
+                        Para transformar Kelvin (K) em Fahrenheit (°F) usa-se a seguinte fórmula:
+                    </p>
+                    <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
+                        <b>K = (K-273,15) * 1,8 + 32</b>
+                    </p>
+
+                    <!-- FAHRENHEIT  -->
+
+                    <h2 class="h5 mt-5">Como converter Fahrenheit em Celsius?</h2>
+                    <p style="text-align: justify;">
+                        Para transformar Fahrenheit (°F) em Celsius (°C) usa-se a seguinte fórmula:
+                    </p>
+                    <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
+                        <b>C = (F - 32) / 1,8 </b>
+                    </p>
+
+                    <h2 class="h5 mt-5">Como converter Fahrenheit em Kelvin?</h2>
+                    <p style="text-align: justify;">
+                        Para transformar Fahrenheit (°F) em Kelvin (K) usa-se a seguinte fórmula:
+                    </p>
+                    <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
+                        <b>K = ((F-32) * (5/9)) + 273,15</b>
+                    </p>
+
+
+
+
+                    <hr>
+                    <p class="h6">Veja outras Ferramentas:</p>
+
+                    <p><a href="/pages/calculadora-de-horas.html">Calculadora de horas</a></p>
+                    <p><a href="/pages/calculadora-de-regra-de-3-simples.html">Calcular regra de 3 simples</a></p>
+                    <p><a href="/pages/calculadora-de-porcentagem.html">Calcular porcentagem</a></p>
+                </article>
+            </section>
+            <!-- INÍCIO SIDEBAR -->
+
+            <aside class="col-lg-3 border ms-2 rounded-2 mb-4 p-0 pb-2">
+                <div class="list-group list-group-flush area-calc">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Calculadoras</span></p>
+
+                </div>
+
+                <div class="list-group list-group-flush mt-3 area-geradores">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geradores</span></p>
+                </div>
+                <div class="list-group list-group-flush mt-3 area-conversores">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Conversores</span></p>
+                </div>
+                <div class="list-group list-group-flush mt-3 area-geral">
+                    <p class="list-group-item list-group-item-dark text-center text-light"
+                        style="margin: 0; background-color: #333;"><span class="h6">Geral</span></p>
+                </div>
+            </aside>
+            <div class="aside-model" style="display: none;">
+                <div class="aside-model-item">
+                    <div class="list-group-item">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0" href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="aviso"
+        style="display: none; height: 80px; width: 330px; background-color: #FF6347; padding: 5px; color: #FFF; border-radius: 5px; align-items: center; justify-content: center; position: fixed; bottom: 10px; right: 10px; box-shadow: 2px 2px 5px #555;">
+        <b>Campos marcados com * são obrigatórios</b>
+    </div>
+    <footer class="bg-dark pt-3 pb-1">
+        <div class="container-lg text-center text-light">
+            <p>Copyright © 2023 <a
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://webtoolsbr.com.br/">Web Tools BR</a> – Todos os direitos reservados.</p>
+        </div>
+        <div class="container-lg text-center text-light">
+            <p>
+                <a href="/pages/politica-de-privacidade.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Política
+                    de
+                    privacidade</a> -
+                <a href="/pages/termos-e-condicoes.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Termos e
+                    condições</a> -
+                <a href="/pages/contato.html"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contato</a>
+            </p>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- START Bootstrap-Cookie-Alert -->
+    <div class="alert text-center cookiealert" role="alert">
+        <b>Utilizamos cookies essenciais e tecnologias semelhantes</b> &#x1F36A; para aprimorar sua experiência de
+        navegação de acordo com nossa <a href="/pages/politica-de-privacidade.html" target="_blank">Política de
+            Privacidade</a>.
+
+        <button type="button" class="btn btn-primary btn-sm acceptcookies">
+            Concordo
+        </button>
+    </div>
+    <!-- END Bootstrap-Cookie-Alert -->
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/cookiealert.js"></script>
+</body>
+
+</html>
