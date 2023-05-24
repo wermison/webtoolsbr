@@ -21,6 +21,8 @@ function listSearch() {
                 postItem.querySelector('#title').innerHTML = item.title;
                 postItem.querySelector('#desc').innerHTML = item.desc;
                 postItem.querySelector('a').href = item.link;
+                postItem.querySelector('img').src = item.img;
+                postItem.querySelector('img').alt = item.title;
 
                 document.querySelector('.post-area').append(postItem);
             }
