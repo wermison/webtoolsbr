@@ -42,6 +42,13 @@ let dataPosts = [
         category: "Calculadoras"
     },
     { 
+        title: "Escrever Números por Extenso", 
+        desc: "Ferramenta online para escrever números por extenso - Basta digitar o número ou o valor em reais que o calculo será feito automaticamente.", 
+        link: "/pages/numeros-por-extenso.html",
+        img: "/assets/images/por-extenso.jpg",
+        category: "Geral"
+    },
+    { 
         title: "Contador de palavras e caracteres", 
         desc: "Conte a quantidade de caracteres e de palavras que seu texto contém - Ferramenta online para contar letras e palavras", 
         link: "/pages/contador-de-palavras-e-caracteres.html",
