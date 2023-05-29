@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de temperatura - Web Tools BR</title>
+    <title>Números por Extenso Online - Web Tools BR</title>
     <meta name="description"
-        content="Conversor de temperatura online que converte automaticamente entre graus Celsius, Fahrenheit e Kelvin" />
-    <link rel=canonical href="https://webtoolsbr.com.br/pages/conversor-de-temperatura.html" />
+        content="Ferramenta online para escrever números por extenso - Basta digitar o número ou o valor em reais que o calculo será feito automaticamente." />
+    <link rel=canonical href="https://webtoolsbr.com.br/pages/numeros-por-extenso.html" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Conversor de temperatura - Web Tools BR" />
+    <meta property="og:title" content="Números por Extenso Online - Web Tools BR" />
     <meta property="og:description"
-        content="Conversor de temperatura online que converte automaticamente entre graus Celsius, Fahrenheit e Kelvin" />
-    <meta property="og:url" content="https://webtoolsbr.com.br/pages/conversor-de-temperatura.html" />
+        content="Ferramenta online para escrever números por extenso - Basta digitar o número ou o valor em reais que o calculo será feito automaticamente." />
+    <meta property="og:url" content="https://webtoolsbr.com.br/pages/numeros-por-extenso.html" />
     <meta property="og:site_name" content="Web Tools BR - Ferramentas Online Grátis" />
     <meta property="article:published_time" content="2023-05-22T20:59:48+00:00" />
     <meta property="og:image" content="https://webtoolsbr.com.br/assets/images/icone.png" />
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/cookiealert.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         footer p {
             font-size: 12px;
@@ -28,7 +29,7 @@
     <link rel="shortcut icon" href="/assets/images/icone.png">
     <script src="/assets/js/data.js" defer></script>
     <script src="/assets/js/aside.js" defer></script>
-    <script src="/assets/js/conversor-de-temperatura.js" defer></script>
+    <script src="/assets/js/numeros-por-extenso.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-78XKB12PQG" defer></script>
     <script defer>
@@ -102,50 +103,49 @@
         <div class="row">
             <section class="col-lg border py-5 mb-4 rounded-2 ">
                 <article>
-                    <h1 class="h4 text-center">Conversor de temperatura</h1>
+                    <h1 class="h4 text-center">Números por Extenso</h1>
 
                     <div class="row gap-1 mt-5">
                         <div class="col-sm">
-                            <label class="form-label" id="name-temp1"><span style="color: #F00;">*</span> Temperatura
-                                1</label>
-                            <input type="number" class="form-control text-center" placeholder="Digite a temperatura"
-                                id="temp-value" oninput="validateTemp()">
+
+                            <input type="number" class="form-control text-center mb-2" placeholder="Digite um número"
+                                id="number-value" oninput="validate()">
+
+                            <span>Qual a unidade?</span><br />
+                            <input type="radio" class="me-1 " name="select-mode" id="numeral" checked
+                                onchange="calculate()"><span class="me-3">Numeral</span>
+                            <input type="radio" class="me-1" name="select-mode" id="monetario"
+                                onchange="calculate()"><span>Monetário</span><br><br>
+
+                            <span>Tipo de letra?</span><br />
+                            <input type="radio" class="me-1 " name="select-letter" id="first-capital" checked
+                                onchange="calculate()"><span class="me-3">Primeira Maiúsculas</span>
+                            <input type="radio" class="me-1" name="select-letter" id="uppercase"
+                                onchange="calculate()"><span class="me-3">Maiúsculas</span>
+                            <input type="radio" class="me-1" name="select-letter" id="lowercase"
+                                onchange="calculate()"><span>Minuscúlas</span>
                         </div>
+
                         <div class="col-sm">
-                            <label class="form-label"><span style="color: #FFF;">*</span></label>
-                            <select class="form-select text-center" aria-label="Default select example" id="temp-1">
-                                <option value="c" id="c1" selected>Celsius</option>
-                                <option value="f">Fahrenheit</option>
-                                <option value="k">Kelvin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row gap-1 mt-3">
-                        <div class="col-sm">
-                            <label class="form-label" id="name-temp2">Temperatura 2</label>
-                            <input type="text" id="temp-result" class="form-control text-center" disabled>
-                        </div>
-                        <div class="col-sm">
-                            <label class="form-label"><span style="color: #FFF;">*</span></label>
-                            <select class="form-select text-center" aria-label="Default select example" id="temp-2">
-                                <option value="c">Celsius</option>
-                                <option value="f" selected>Fahrenheit</option>
-                                <option value="k">Kelvin</option>
-                            </select>
+                            <button class="btn btn-dark" style="width: 50%;" id="calculate-btn">
+                                Escrever por extenso
+                            </button>
                         </div>
                     </div>
 
-                    <div class="area-button d-flex justify-content-center">
-                        <button class="btn btn-dark mt-3" style="width: 25%;" id="calculate-btn">
-                            Calcular
-                        </button>
-                    </div>
 
                     <div id="area-result">
                         <p class="alert alert-light text-center mt-4" id="result">
                             O resultado aparecerá aqui
                         </p>
                     </div>
+                    <div class="area-btn mb-3 d-flex justify-content-center">
+                        <button class="btn btn-dark" id="btn-copy" style="width: 85%; display: none;">Copiar
+                            número por extenso</button>
+                    </div>
+                    <p class="alert alert-success text-center" id="copy" style="display: none;">
+                        Número por extenso copiado com sucesso
+                    </p>
 
                     <h2 class="h5 text-center mt-4 mb-4">Como funciona nosso conversor de temperatura?</h2>
                     <p style="text-align: justify;">
@@ -171,7 +171,7 @@
                     <p class="p-1" style="border: 1px solid #CCC; display: inline-block;">
                         <b>K = C + 273,15</b>
                     </p>
-                    
+
 
                     <!-- KELVIN -->
 
