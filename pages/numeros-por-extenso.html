@@ -106,30 +106,30 @@
                     <h1 class="h4 text-center">Números por Extenso Online</h1>
 
                     <div class="row gap-1 mt-5">
-                        <div class="col-sm">
-
+                        
+                        <div class="mb-3 text-center">
                             <input type="number" class="form-control text-center mb-2" placeholder="Digite um número"
                                 id="number-value" oninput="validate()">
 
-                            <span>Qual a unidade?</span><br />
+                            <b>Qual a unidade?</b><br />
                             <input type="radio" class="me-1 " name="select-mode" id="numeral" checked
                                 onchange="calculate()"><span class="me-3">Numeral</span>
                             <input type="radio" class="me-1" name="select-mode" id="monetario"
                                 onchange="calculate()"><span>Monetário</span><br><br>
 
-                            <span>Tipo de letra?</span><br />
+                            <b>Tipo de letra?</b><br />
                             <input type="radio" class="me-1 " name="select-letter" id="first-capital" checked
-                                onchange="calculate()"><span class="me-3">Primeira Maiúsculas</span>
+                                onchange="calculate()"><span class="me-2">Primeira Maiúscula</span>
                             <input type="radio" class="me-1" name="select-letter" id="uppercase"
-                                onchange="calculate()"><span class="me-3">Maiúsculas</span>
+                                onchange="calculate()"><span class="me-2">Maiúsculas</span>
                             <input type="radio" class="me-1" name="select-letter" id="lowercase"
-                                onchange="calculate()"><span>Minuscúlas</span>
+                                onchange="calculate()"><span>Minúsculas</span>
+                        
                         </div>
-
-                        <div class="col-sm">
-                            <button class="btn btn-dark" style="width: 50%;" id="calculate-btn">
-                                Escrever por extenso
-                            </button>
+                        <div class="d-flex justify-content-center">
+                        <button class="btn btn-dark" style="width: 75%;" id="calculate-btn">
+                            Escrever por extenso
+                        </button>
                         </div>
                     </div>
 
@@ -140,7 +140,7 @@
                         </p>
                     </div>
                     <div class="area-btn mb-3 d-flex justify-content-center">
-                        <button class="btn btn-dark" id="btn-copy" style="width: 85%; display: none;">Copiar
+                        <button class="btn btn-dark" id="btn-copy" style="width: 75%; display: none;">Copiar
                             número por extenso</button>
                     </div>
                     <p class="alert alert-success text-center" id="copy" style="display: none;">
