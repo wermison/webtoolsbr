@@ -1,5 +1,3 @@
-OWNERDOMAIN=webtoolsbr.com.br
-MANAGERDOMAIN=themoneytizer.com
 themoneytizer.com,43304,DIRECT
 smartadserver.com, 1097, DIRECT, 060d053dcf45cbf3
 adcolony.com, 496220845654deec, RESELLER, 1ad675c9de6b5176
